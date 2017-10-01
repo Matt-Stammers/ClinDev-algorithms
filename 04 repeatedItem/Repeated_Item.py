@@ -20,9 +20,9 @@ def repeated_item_finder(array):
   item_list = []
   repeated_items = []
   if type(array) is not list:
-    return print('This is not a list:{}, this program only accepts lists'.format(array))
+    return 'This is not a list:{}, this program only accepts lists'.format(array)
   elif array == []:
-    return print('Apologies this is an empty list:{}, please insert some content'.format(array))
+    return 'Apologies this is an empty list:{}, please insert some content'.format(array)
   else:
     for item in array:
       if item not in item_list:
@@ -31,9 +31,9 @@ def repeated_item_finder(array):
         repeated_items.append(item)
     try:
       if repeated_items == []:
-        return print('There are no repeated items in this array. Here is your original array returned to you: {}'.format(item_list))
+        return 'There are no repeated items in this array. Here is your original array returned to you: {}'.format(item_list)
       else:
-        return set(repeated_items) # this will return a set of the the repeated items
+        return 'Here is a list of the unique items within your list: {}'.format(set(repeated_items)) # this will return a set of the the repeated items
     except:
       return 'Apologies, Something has gone wrong! Ahhh!'
     
