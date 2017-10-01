@@ -10,7 +10,7 @@ export function randomInt(start, before){
 }
 '''
 
-# Here's an example of the built in python pseudorandom number generator based on the Mersenne Twister in action:
+# Here's an example of the built in python pseudorandom number generator based on the Mersenne Twister in action making a small list of random numbers.
 
 import random
 l=1000
