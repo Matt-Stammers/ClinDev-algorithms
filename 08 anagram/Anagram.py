@@ -48,31 +48,29 @@ print(anagramSolution2('abcde','edcba'))
 
 # the above are quite inefficient. Here is the n linear solution:
 
-def anagram_test(s1,s2):
-    alist = list(s2)
+def anagramSolution4(s1,s2):
+    c1 = [0]*26
+    c2 = [0]*26
 
-    pos1 = 0
-    OK = True
+    for i in range(len(s1)):
+        pos = ord(s1[i])-ord('a')
+        c1[pos] = c1[pos] + 1
 
-    while pos1 < len(s1) and OK:
-        pos2 = 0
-        found = False
-        while pos2 < len(alist) and not found:
-            if s1[pos1] == alist[pos2]:
-                found = True
-            else:
-                pos2 = pos2 + 1
+    for i in range(len(s2)):
+        pos = ord(s2[i])-ord('a')
+        c2[pos] = c2[pos] + 1
 
-        if found:
-            alist[pos2] = None
+    j = 0
+    stillOK = True
+    while j<26 and stillOK:
+        if c1[j]==c2[j]:
+            j = j + 1
         else:
-            OK = False
+            stillOK = False
 
-        pos1 = pos1 + 1
+    return stillOK
 
-    return OK
-
-print(anagram_test('12345','12534'))
+print(anagramSolution4('apple','pleap'))
 print(anagram_test('aeta','tame'))
 print(anagram_test('pesto','tespo'))
 
