@@ -23,6 +23,18 @@ print(is_palindrome(1234321)) # will return True
 print(is_palindrome(3456789)) # will return False
 print(is_palindrome(6789876)) # will return True
 
+# for strings:
+
+def characters(x):
+  return [y for y in x]
+
+def is_palindrome(x):
+  chars = characters(x)
+  for f, r in zip(chars,reversed(chars)):
+    if f != r:
+      return False
+  return True
+
 '''
 class Tests(unittest.TestCase):
   def test_negative(self):
